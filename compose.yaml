@@ -1,0 +1,13 @@
+services:
+  mysql:
+    container_name: "book-management"
+    image: "mysql:latest"
+    environment:
+      - "MYSQL_DATABASE=bookdb"
+      - "MYSQL_PASSWORD=secret"
+      - "MYSQL_ROOT_PASSWORD=verysecret"
+      - "MYSQL_USER=myuser"
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./mysql-init-scripts:/docker-entrypoint-initdb.d"
