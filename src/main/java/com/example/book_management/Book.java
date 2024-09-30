@@ -1,6 +1,5 @@
 package com.example.book_management;
 
-
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
@@ -17,6 +16,16 @@ public class Book {
     private LocalDate releaseDate;
     private String author;
     private Integer rating;
+
+    public Book(){}
+
+    public Book(String title, LocalDate releaseDate, String author, Integer rating) {
+      this.title = title;
+      this.releaseDate = releaseDate;
+      this.author = author;
+      this.rating = rating;
+    }
+
 
     public Integer getId() {
         return id;
@@ -57,6 +66,4 @@ public class Book {
       public void setRating(Integer rating) {
         this.rating = rating;
       }
-
-    
 }

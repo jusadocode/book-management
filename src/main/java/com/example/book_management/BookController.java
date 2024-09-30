@@ -44,8 +44,7 @@ public class BookController {
         if (rating < 1 || rating > 5) {
         return "Rating must be between 1 and 5.";
     }
-        Long longId = id.longValue();
-        Optional<Book> bookToUpdate = bookRepository.findById(longId);
+        Optional<Book> bookToUpdate = bookRepository.findById(id);
 
         if (bookToUpdate.isPresent()) {
             bookRepository.rateBookById(id, rating);
